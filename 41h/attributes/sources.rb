@@ -34,11 +34,11 @@ default['sources']['packages']['rappel'] = {
 }
 
 # Z3 commit ref / release and source.
-default['sources']['packages']['z3'] = {
-  type: 'git',
-  uri: 'https://github.com/Z3Prover/z3.git',
-  ref: '95c9ccb2959abb46c553ec72731cd75358b80138'
-}
+#default['sources']['packages']['z3'] = {
+#  type: 'git',
+#  uri: 'https://github.com/Z3Prover/z3.git',
+#  ref: '95c9ccb2959abb46c553ec72731cd75358b80138'
+#}
 
 # Checksec commit ref / release and source.
 default['sources']['packages']['checksec'] = {
