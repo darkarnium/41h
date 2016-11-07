@@ -32,5 +32,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "2048"
   end
 
-  # provisioning (chef) goes here
+  config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path = "4f_41h"
+  end
 end
