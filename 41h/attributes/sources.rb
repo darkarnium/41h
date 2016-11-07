@@ -33,7 +33,6 @@ default['sources']['packages']['rappel'] = {
   ref: 'a969940408afb4717a77f5e2a13792156b1c2301'
 }
 
-
 # Checksec commit ref / release and source.
 default['sources']['packages']['checksec'] = {
   type: 'git',
@@ -53,4 +52,10 @@ default['sources']['packages']['pwndbg'] = {
   type: 'git',
   uri: 'https://github.com/pwndbg/pwndbg.git',
   ref: 'be9b06776b3342d43c358f5fecac6d08470e926f'
+}
+
+default['sources']['packages']['gef'] = {
+  type: 'git',
+  uri: 'https://github.com/hugsy/gef.git',
+  ref: 'a0395fe2e8a136025ebd836daf80e797f76f745b'
 }
