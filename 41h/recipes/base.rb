@@ -7,9 +7,6 @@
 include_recipe 'apt'
 include_recipe 'build-essential::default'
 
-# Ensure Python is installed.
-include_recipe 'poise-python::default'
-
 # Apply all sysctl values from attributes.
 include_recipe 'sysctl::apply'
 

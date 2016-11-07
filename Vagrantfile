@@ -38,6 +38,6 @@ Vagrant.configure('2') do |config|
     mkdir /tmp/chef
     mv ./berks-cookbooks /tmp/chef/cookbooks
     cd /tmp/chef/cookbooks
-    chef-client -z -o '41h::base,41h::sources'
+    chef-client -z -o '41h::default'
   SHELL
 end

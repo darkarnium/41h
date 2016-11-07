@@ -6,10 +6,10 @@ override['build-essential']['compile_time'] = true
 
 # Define a list of base packages to install (in generic repositories).
 default['base']['packages'] = [
-  # General *Nix shit.
   'git',
   'gdb',
   'curl',
+  'wget',
   'tmux',
   'socat',
   'lolcat',
@@ -17,12 +17,12 @@ default['base']['packages'] = [
   'vim-nox',
   'subversion',
   'fortune-mod',
-
-  # Python and friends.
-  'ipython',
-  'python-pip',
-
+  'nginx',  # to proxy ipython notebook and stuff
+  'openssl',
+  'libssl-dev',
+  'libsodium-dev',
   'valgrind',
+  'z3',
 
   # Capstone.
   'python-capstone',
