@@ -18,22 +18,26 @@ Vagrant.configure('2') do |config|
   # your network.
   # config.vm.network "public_network"
 
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
+  # Mount scratch directory and Chef cookbook(s).
   config.vm.synced_folder './scratch', '/scratch'
-  config.vm.synced_folder './41h', '/mnt/provisioning', mount_options: ['ro']
 
   config.vm.provider 'virtualbox' do |vb|
     vb.gui = false
     vb.memory = '2048'
   end
 
+  # Bus the provisioning cookbook to the machine.
+  config.vm.provision 'file', source: './41h', destination: '/tmp/provisioning/'
+
   # Kick off chef.
   config.vm.provision 'shell', inline: <<-SHELL
-    curl -L https://omnitruck.chef.io/install.sh | sudo bash -- -v 12.15.19
-    cd /mnt/provisioning
+    curl -L -s https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.19.6-1_amd64.deb -o /tmp/chefdk_0.19.6-1_amd64.deb
+    dpkg -i /tmp/chefdk_0.19.6-1_amd64.deb
+    cd /tmp/provisioning
+    berks vendor
+    mkdir /tmp/chef
+    mv ./berks-cookbooks /tmp/chef/cookbooks
+    cd /tmp/chef/cookbooks
     chef-client -z -o '41h::base,41h::sources'
   SHELL
 end

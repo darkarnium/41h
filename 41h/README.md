@@ -18,11 +18,11 @@ Due to the assumption of Ubuntu package names, and the use of `apt`, this cookbo
 
 ### Cookbooks
 
-* apt (~> 5.0.0)
-* build-essential (~> 7.0.1)
-* poise-python (~> 1.5.1)
 * ntp (~> 3.2.0)
+* apt (~> 5.0.0)
 * sysctl (~> 0.8.0)
+* poise-python (~> 1.5.1)
+* build-essential (~> 7.0.1)
 
 ## Attributes
 
@@ -32,3 +32,16 @@ The following attributes should be overridden through this cookbooks, or another
   * An array of packages to install via `apt-get`.
 * `node['python']['packages']``
   * An array of packages to install via Python pip.
+
+## Recipes
+
+The main recipes inside of this cookbook are as follows:
+
+* `recipes/base.rb`
+  * Responsible for setting up the base system.
+  * Performs basic house-keeping and sets sane NTP and sysctl values.
+  * Installs defined binary packages.
+  * Installs and configure Python.
+
+* `recipes/sources.rb`
+  * Responsible for fetching and installing projects and packages from source.
