@@ -1,6 +1,6 @@
 # # encoding: utf-8
 
-# Inspec test for recipe 4f_41h::default
+# Inspec test for recipe 41h::default
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec_reference.html

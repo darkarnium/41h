@@ -1,12 +1,12 @@
 #
-# Cookbook Name:: 4f_41h
+# Cookbook Name:: 41h
 # Spec:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe '4f_41h::default' do
+describe '41h::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new
