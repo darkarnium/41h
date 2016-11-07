@@ -33,7 +33,8 @@ default['python']['apt-packages'] = [
   'python3-mpmath',
   'python-capstone',
   'python-requests',
-  'python3-requests'
+  'python3-requests',
+  'python-lzma'
 ]
 
 # An array of Python packages to install on both versions (pip).
@@ -43,6 +44,7 @@ default['python']['pip-packages'] = [
 
 # Python 2 packages to install.
 default['python']['pip2-packages'] = [
-  'binwalk',
   'pwntools'
 ]
+
+# todo: build binwalk
