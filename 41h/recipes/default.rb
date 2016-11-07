@@ -5,4 +5,6 @@
 
 include_recipe '41h::base'
 include_recipe '41h::sources'
+include_recipe '41h::assembly'
+include_recipe '41h::emulate'
 include_recipe '41h::python'

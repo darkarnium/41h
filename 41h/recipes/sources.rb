@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: 41h
-# Recipe:: base
+# Recipe:: sources
 #
 
 # Create parent directory.

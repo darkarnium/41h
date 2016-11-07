@@ -10,15 +10,39 @@ default['python']['apt-packages'] = [
   'ipython3-notebook',
   'python-numpy',
   'python3-numpy',
-  'python-parse'
+  'python-scipy',
+  'python3-scipy',
+  'python-parse',
+  'python-scapy',
+  'python-openssl',
+  'python3-openssl',
+  'python-crypto',
+  'python3-crypto',
+  'python-cryptography',
+  'python3-cryptography',
+  'python-six',
+  'python3-six',
+  'python-bs4',
+  'python3-bs4',
+  'python-scrapy',
+  'python-pil',
+  'python3-pil',
+  'python-gmpy2',
+  'python3-gmpy2',
+  'python-mpmath',
+  'python3-mpmath',
+  'python-capstone',
+  'python-requests',
+  'python3-requests'
 ]
 
-# An array of Python packages to install (pip).
+# An array of Python packages to install on both versions (pip).
 default['python']['pip-packages'] = [
   'cerberus',
-  'scrapy',
-  'six',
-  'beautifulsoup4',
+]
+
+# Python 2 packages to install.
+default['python']['pip2-packages'] = [
   'binwalk',
   'pwntools'
 ]

@@ -8,6 +8,7 @@ override['build-essential']['compile_time'] = true
 default['base']['packages'] = [
   'git',
   'gdb',
+  'cmake',
   'curl',
   'wget',
   'tmux',
@@ -15,21 +16,15 @@ default['base']['packages'] = [
   'lolcat',
   'netcat',
   'vim-nox',
+  'libedit-dev',
+  'pkg-config',
+  'binutils',
   'subversion',
   'fortune-mod',
   'nginx',  # to proxy ipython notebook and stuff
   'openssl',
   'libssl-dev',
-  'libsodium-dev',
   'valgrind',
   'z3',
-
-  # Capstone.
-  'python-capstone',
-  'libcapstone3',
-  'libcapstone-dev',
-
-  # Radare.
-  'radare2',
-  'libradare2-dev'
+  'thefuck'
 ]

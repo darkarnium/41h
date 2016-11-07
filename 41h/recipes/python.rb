@@ -26,3 +26,10 @@ node['python']['pip-packages'].each do |p|
     action :install
   end
 end
+
+node['python']['pip2-packages'].each do |p|
+  python_package p do
+    python '2'
+    action :install
+  end
+end
