@@ -11,7 +11,7 @@ execute 'sudo mkdir build' do
   cwd '/opt/sources/keystone'
   creates '/opt/sources/keystone/build'
 end
-execute 'sudo cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DLLVM_TARGETS_TO_BUILD="X86;ARM;Mips" -G "Unix Makefiles" ..' do
+execute 'sudo cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DLLVM_TARGETS_TO_BUILD="X86;ARM;Mips;AArch64" -G "Unix Makefiles" ..' do
   cwd '/opt/sources/keystone/build'
   creates '/opt/sources/keystone/build/CMakeLists.txt'
 end
