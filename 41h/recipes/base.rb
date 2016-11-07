@@ -20,6 +20,11 @@ template '/etc/update-motd.d/50-4f' do
   group 'root'
   mode 00755
 end
+# remove default MOTD bullshit we don't want
+execute 'sudo rm /etc/update-motd.d/00-header'
+execute 'sudo rm /etc/update-motd.d/10-help-text'
+execute 'sudo rm /etc/update-motd.d/51-cloudguest'
+execute 'sudo rm /etc/update-motd.d/90-updates-available'
 
 # Install ulimit configuration.
 template '/etc/security/limits.d/base.conf' do
