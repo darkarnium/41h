@@ -7,7 +7,6 @@ override['build-essential']['compile_time'] = true
 # Define a list of base packages to install (in generic repositories).
 default['base']['packages'] = [
   'git',
-  'gdb',
   'cmake',
   'curl',
   'wget',

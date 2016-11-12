@@ -34,17 +34,24 @@ default['python']['apt-packages'] = [
   'python-capstone',
   'python-requests',
   'python3-requests',
-  'python-lzma'
+  'python-lzma',
+  'python-pycparser',
+  'python3-pycparser',
+  'python-psutil',
+  'python3-psutil',
+  'python-ptrace',
+  'python-pyelftools',
+  'python3-pyelftools',
+  'isort',
+  'python3-isort'
 ]
 
 # An array of Python packages to install on both versions (pip).
 default['python']['pip-packages'] = [
-  'cerberus',
+  'cerberus'
 ]
 
 # Python 2 packages to install.
 default['python']['pip2-packages'] = [
   'pwntools'
 ]
-
-# todo: build binwalk

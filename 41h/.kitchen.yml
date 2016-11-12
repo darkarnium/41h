@@ -14,9 +14,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[41h::base]
-      - recipe[41h::sources]
-      - recipe[41h::python]
+      - recipe[41h::default]
     verifier:
       inspec_tests:
         - test/recipes

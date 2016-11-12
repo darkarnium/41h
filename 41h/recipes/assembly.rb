@@ -21,11 +21,9 @@ execute 'sudo make install' do
 end
 execute 'sudo make install' do
   cwd '/opt/sources/keystone/bindings/python'
-  creates '/usr/local/lib/libkeystone.so'
 end
 execute 'sudo make install3' do
   cwd '/opt/sources/keystone/bindings/python'
-  creates '/usr/local/lib/libkeystone.so'
 end
 
 # build rappel

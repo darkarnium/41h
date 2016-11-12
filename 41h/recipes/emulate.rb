@@ -15,9 +15,7 @@ execute 'sudo ./make.sh install' do
 end
 execute 'sudo make install' do
   cwd '/opt/sources/unicorn/bindings/python'
-  creates '/usr/lib/libunicorn.so'
 end
 execute 'sudo make install3' do
   cwd '/opt/sources/unicorn/bindings/python'
-  creates '/usr/lib/libunicorn.so'
 end

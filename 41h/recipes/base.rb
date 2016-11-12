@@ -13,6 +13,19 @@ include_recipe 'sysctl::apply'
 # Basic system sanity.
 include_recipe 'ntp::default'
 
+group '4f' do
+  action :create
+end
+
+user 'default user' do
+  username '4f'
+  password '$1$76RW6lDJ$lF19BuLJGBkjJLW5KtLDk.'
+  group '4f'
+  home '/home/4f'
+  manage_home true
+  action :create
+end
+
 # Install MOTD.
 template '/etc/update-motd.d/50-4f' do
   source '4f-motd.sh.erb'
@@ -20,11 +33,12 @@ template '/etc/update-motd.d/50-4f' do
   group 'root'
   mode 00755
 end
+
 # remove default MOTD bullshit we don't want
-execute 'sudo rm /etc/update-motd.d/00-header'
-execute 'sudo rm /etc/update-motd.d/10-help-text'
-execute 'sudo rm /etc/update-motd.d/51-cloudguest'
-execute 'sudo rm /etc/update-motd.d/90-updates-available'
+execute 'sudo rm -f /etc/update-motd.d/00-header'
+execute 'sudo rm -f /etc/update-motd.d/10-help-text'
+execute 'sudo rm -f /etc/update-motd.d/51-cloudguest'
+execute 'sudo rm -f /etc/update-motd.d/90-updates-available'
 
 # Install ulimit configuration.
 template '/etc/security/limits.d/base.conf' do
