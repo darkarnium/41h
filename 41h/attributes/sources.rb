@@ -59,3 +59,22 @@ default['sources']['packages']['gef'] = {
   uri: 'https://github.com/hugsy/gef.git',
   ref: 'a0395fe2e8a136025ebd836daf80e797f76f745b'
 }
+
+# Recon tools.
+default['sources']['packages']['subbrute'] = {
+  type: 'git',
+  uri: 'https://github.com/TheRook/subbrute.git',
+  ref: '6f2e6884a5d779dc3a7e6c89595479886b10a60c'
+}
+
+default['sources']['packages']['gobuster'] = {
+  type: 'git',
+  uri: 'https://github.com/OJ/gobuster.git',
+  ref: '7ccd130ad7d5abccc46102fa48ff17c4be9ca185'
+}
+
+default['sources']['packages']['seclists'] = {
+  type: 'git',
+  uri: 'https://github.com/danielmiessler/SecLists.git',
+  ref: 'a823fad248aab2912a285dcfea2aae4cdde9ca7f'
+}

@@ -13,6 +13,7 @@ default['base']['packages'] = [
   'tmux',
   'socat',
   'lolcat',
+  'golang',
   'netcat',
   'vim-nox',
   'libedit-dev',
