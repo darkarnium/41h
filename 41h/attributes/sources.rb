@@ -78,3 +78,9 @@ default['sources']['packages']['seclists'] = {
   uri: 'https://github.com/danielmiessler/SecLists.git',
   ref: 'a823fad248aab2912a285dcfea2aae4cdde9ca7f'
 }
+
+default['sources']['packages']['sqlmap'] = {
+  type: 'git',
+  uri: 'https://github.com/sqlmapproject/sqlmap.git',
+  ref: '4ac319b074d78243049f9c31778f07410abe5d05'
+}

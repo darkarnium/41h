@@ -26,5 +26,8 @@ default['base']['packages'] = [
   'libssl-dev',
   'valgrind',
   'z3',
-  'thefuck'
+  'thefuck',
+  'tcptraceroute',
+  'john',
+  'nmap'
 ]
