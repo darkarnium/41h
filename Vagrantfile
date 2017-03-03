@@ -30,14 +30,5 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'file', source: './41h', destination: '/tmp/provisioning/'
 
   # Kick off chef.
-  config.vm.provision 'shell', inline: <<-SHELL
-    curl -L -s https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.19.6-1_amd64.deb -o /tmp/chefdk_0.19.6-1_amd64.deb
-    dpkg -i /tmp/chefdk_0.19.6-1_amd64.deb
-    cd /tmp/provisioning
-    berks vendor
-    mkdir /tmp/chef
-    mv ./berks-cookbooks /tmp/chef/cookbooks
-    cd /tmp/chef/cookbooks
-    chef-client -z -o '41h::default'
-  SHELL
+  config.vm.provision 'shell', path: 'provision.sh'
 end
