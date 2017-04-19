@@ -16,7 +16,7 @@ runcmd:
   - GIT_SSH_COMMAND="ssh -i /root/.ssh/41h-startup.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone git@github.com:darkarnium/41h.git /tmp/provisioning
   # Create the Chef zero repository.
   - cd /tmp/provisioning/41h
-  - berks vendor
+  - /opt/chef/embedded/bin/berks vendor
   - mkdir /tmp/chef
   - mv ./berks-cookbooks /tmp/chef/cookbooks
   - cd /tmp/chef/cookbooks
