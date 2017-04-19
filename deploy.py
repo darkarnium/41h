@@ -73,5 +73,10 @@ def main(api_token, region, size, cloud_config):
             log.info('Droplet still in state %s', action.status)
             time.sleep(10)
 
+    # Print IP and exit.
+    droplet.load()
+    log.info('New 41h host should be running at %s', droplet.ip_address)
+
+
 if __name__ == '__main__':
     main()

@@ -5,6 +5,8 @@ runcmd:
   - apt-get -y update
   - apt-get -y install git bash
   - apt-get -y install build-essential
+  # Ensure environment is setup.
+  - export HOME=/root
   # Fetch and install Chef.
   - curl -L https://omnitruck.chef.io/install.sh | sudo bash
   - /opt/chef/embedded/bin/gem install berkshelf
@@ -21,5 +23,6 @@ runcmd:
   - mv ./berks-cookbooks /tmp/chef/cookbooks
   - cd /tmp/chef/cookbooks
   # Kick off chef.
+  - echo '{}' > /tmp/chef/chef.json
   - chmod 600 /tmp/chef/chef.json
   - chef-client -z -o '41h::default' -j /tmp/chef/chef.json

@@ -14,8 +14,9 @@ end
 execute 'build-make-unicorn' do
   cwd '/opt/sources/unicorn'
   user 'root'
-  command './make.sh'
+  command '/bin/bash ./make.sh'
   creates '/usr/lib/libunicorn.so'
+  environment node['make']['compiler-environment']
 end
 
 execute 'build-install-unicorn' do
@@ -24,6 +25,7 @@ execute 'build-install-unicorn' do
   command './make.sh install'
   creates '/usr/lib/libunicorn.so'
   notifies :run, 'execute[build-install-unicorn-python-bindings]', :immediately
+  environment node['make']['compiler-environment']
 end
 
 # Install unicorn Python bindings.
@@ -33,6 +35,7 @@ execute 'build-install-unicorn-python-bindings' do
   action :nothing
   command 'make install'
   notifies :run, 'execute[build-install-unicorn-python3-bindings]', :immediately
+  environment node['make']['compiler-environment']
 end
 
 execute 'build-install-unicorn-python3-bindings' do
@@ -40,4 +43,5 @@ execute 'build-install-unicorn-python3-bindings' do
   user 'root'
   action :nothing
   command 'make install3'
+  environment node['make']['compiler-environment']
 end

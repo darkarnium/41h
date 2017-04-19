@@ -22,6 +22,7 @@ execute 'build-make-keystone' do
   cwd '/opt/sources/keystone/build'
   user 'root'
   command [
+    '/bin/bash ',
     'cmake',
     '-DCMAKE_BUILD_TYPE=Release',
     '-DBUILD_SHARED_LIBS=ON',
@@ -30,6 +31,7 @@ execute 'build-make-keystone' do
     '..',
   ].join(' ')
   creates '/opt/sources/keystone/build/CMakeLists.txt'
+  environment node['make']['compiler-environment']
 end
 
 execute 'build-install-keystone' do
@@ -38,6 +40,7 @@ execute 'build-install-keystone' do
   command 'make install'
   creates '/usr/local/lib/libkeystone.so'
   notifies :run, 'execute[build-install-keystone-python-bindings]', :immediately
+  environment node['make']['compiler-environment']
 end
 
 # Install Keystone python bindings.
@@ -47,6 +50,7 @@ execute 'build-install-keystone-python-bindings' do
   action :nothing
   command 'make install'
   notifies :run, 'execute[build-install-keystone-python3-bindings]', :immediately
+  environment node['make']['compiler-environment']
 end
 
 execute 'build-install-keystone-python3-bindings' do
@@ -54,6 +58,7 @@ execute 'build-install-keystone-python3-bindings' do
   user 'root'
   action :nothing
   command 'make install3'
+  environment node['make']['compiler-environment']
 end
 
 # Build Rappel.
@@ -62,6 +67,7 @@ execute 'sudo make' do
   user 'root'
   command 'make'
   creates '/usr/sources/rappel/bin/rappel'
+  environment node['make']['compiler-environment']
 end
 
 link '/usr/bin/rappel' do
