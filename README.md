@@ -32,29 +32,41 @@ A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside o
 
 ## Getting Started
 
+### This Machine.
+
+If for some reason you want to install 41h on the machine that you have checked the repository out onto, perform the following:
+
+1) Open `cloud-config.yaml`.
+2) Copy all lines under `runcmd`
+3) Remove the proceeding `- ` from each command.
+4) Run commands in order.
+
 ### Digital Ocean
 
-Run the following commands!
+To deploy a new 41h machine into Digital Ocean (via the API), perform the following:
 
-1) `pip install -r requirements.txt`
-2) `python2.7 deploy.py --api-token <DO_API_TOKEN>`
+1) Run `pip install -r requirements.txt` from this directory.
+2) Run `python2.7 deploy.py --api-token <DO_API_TOKEN>` from this directory.
+3) Wait.
 
 ### Vagrant
 
-First up, ensure the following dependencies are installed and configured:
+To deploy a local virtual machine via Vagrant, perform the following:
 
+1) First up, ensure the following dependencies are installed and configured:
 * Vagrant
   * https://www.vagrantup.com/
   * No configuration required.
-
 * VirtualBox
   * https://www.virtualbox.org/wiki/Downloads
   * Ensure Intel VT or AMD-V is configured on the system.
   * Change the virtual machine default directory (optional).
+2) Run `vagrant up` from this directory.
+3) Wait.
+4) Login using `vagrant ssh`.
+5) When done, run `vagrant destroy` to tear-down the machine once again.
 
 **Tip!** If running under Windows, a command-line compatible SSH client is required to be in the user's path, or things will fail. 'Git Bash' from https://git-scm.com/downloads works well for this, just make sure that all commands are run inside of 'Git Bash' instead of PowerShell or CMD.
-
-After the above is installed, just open a terminal, change into this directory and issue a `vagrant up`. Assuming all goes well, the VM will be provisioned and can be logged into using `vagrant ssh` from this directory.
 
 ## Problems?
 
