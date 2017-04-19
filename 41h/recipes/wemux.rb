@@ -4,7 +4,9 @@
 #
 
 # Only attempt to install wemux if it's actually present.
-if ::File.exist?('/opt/sources/wemux')
+unless ::File.exist?('/opt/sources/wemux')
+  Chef::Log.warn('Wemux sources directory does not exist, not installing!')
+else
   link '/usr/bin/wemux' do
     to '/opt/sources/wemux/wemux'
   end
