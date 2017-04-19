@@ -22,7 +22,6 @@ execute 'build-make-keystone' do
   cwd '/opt/sources/keystone/build'
   user 'root'
   command [
-    '/bin/bash ',
     'cmake',
     '-DCMAKE_BUILD_TYPE=Release',
     '-DBUILD_SHARED_LIBS=ON',
