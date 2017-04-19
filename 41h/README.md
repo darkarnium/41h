@@ -20,7 +20,6 @@ Due to the assumption of Ubuntu package names, and the use of `apt`, this cookbo
 
 * ntp (~> 3.2.0)
 * apt (~> 5.0.0)
-* iptables (= 3.0.1)
 * sysctl (~> 0.8.0)
 * poise-python (~> 1.5.1)
 * build-essential (~> 7.0.1)

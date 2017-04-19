@@ -3,5 +3,11 @@ default['iptables']['management'] = [
   '0.0.0.0/0'
 ]
 
-# Define ruby interpreter to use for rebuild-iptables.
-default['iptables']['system_ruby'] = '/usr/bin/ruby'
+# Traffic to permit.
+default['iptables']['permit'] = [
+  # {
+  #  'port' => '80',
+  #  'source' => '192.168.1.0/24',
+  #  'protocol' => 'tcp',
+  # }
+]
