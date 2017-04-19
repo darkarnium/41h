@@ -5,26 +5,26 @@
 
 # Setup Go environment variables.
 environment = {
-  'GOPATH' => '/opt/sources/go/'
+  'GOPATH' => '/opt/sources/go/',
 }
 
 # Install gobuster.
-unless ::File.exist?('/opt/sources/go/src/gobuster/gobuster')
-  execute 'go-get-gobuster' do
-    cwd '/opt/sources/go/src/gobuster'
-    action :run
-    command 'go get'
-    environment environment
-  end
+execute 'go-get-gobuster' do
+  cwd '/opt/sources/go/src/gobuster'
+  action :run
+  not_if { ::File.exist?('/opt/sources/go/src/gobuster/gobuster') }
+  command 'go get'
+  environment environment
+end
 
-  execute 'go-build-gobuster' do
-    cwd '/opt/sources/go/src/gobuster'
-    action :run
-    command 'go build'
-    environment environment
-  end
+execute 'go-build-gobuster' do
+  cwd '/opt/sources/go/src/gobuster'
+  action :run
+  not_if { ::File.exist?('/opt/sources/go/src/gobuster/gobuster') }
+  command 'go build'
+  environment environment
+end
 
-  link '/opt/sources/go/src/gobuster/gobuster' do
-    to '/usr/bin/gobuster'
-  end
+link '/opt/sources/go/src/gobuster/gobuster' do
+  to '/usr/bin/gobuster'
 end
