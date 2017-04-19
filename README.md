@@ -36,17 +36,15 @@ A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside o
 
 If for some reason you want to install 41h on the machine that you have checked the repository out onto, perform the following:
 
-1) Open `cloud-config.yaml`.
-2) Copy all lines under `runcmd`
-3) Remove the proceeding `- ` from each command.
-4) Run commands in order.
+1) Run `deploy-local.sh` from this directory.
+2) Wait.
 
 ### Digital Ocean
 
 To deploy a new 41h machine into Digital Ocean (via the API), perform the following:
 
 1) Run `pip install -r requirements.txt` from this directory.
-2) Run `python2.7 deploy.py --api-token <DO_API_TOKEN>` from this directory.
+2) Run `python2.7 deploy-digitalocean.py --api-token <DO_API_TOKEN>` from this directory.
 3) Wait.
 
 ### Vagrant
