@@ -21,7 +21,6 @@ file '/usr/local/etc/wemux.conf' do
   owner 'root'
   action :create
   content 'host_groups=(4f)'
-  notifies :run, 'execute[wemux-server]', :immediately
 end
 
 # Ensure the wemux socket is writable.
