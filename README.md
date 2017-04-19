@@ -32,6 +32,15 @@ A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside o
 
 ## Getting Started
 
+### Digital Ocean
+
+Run the following commands!
+
+1) `pip install -r requirements.txt`
+2) `python2.7 deploy.py --api-token <DO_API_TOKEN>`
+
+### Vagrant
+
 First up, ensure the following dependencies are installed and configured:
 
 * Vagrant
