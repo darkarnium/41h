@@ -1,6 +1,7 @@
+# Define a list of asm packages to install (from APT).
 default['asm']['packages'] = [
-  'libcapstone3',
-  'libcapstone-dev',
   'radare2',
-  'libradare2-dev'
+  'libcapstone3',
+  'libradare2-dev',
+  'libcapstone-dev',
 ]

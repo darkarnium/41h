@@ -1,0 +1,16 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Allow ICMP Echo Requests, other ICMP messages hit ESTABLISHED,RELATED Accept
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow all ICMPv6 traffic.
+-A INPUT -p ipv6-icmp -j ACCEPT
+
+# Allow local to local communications
+-A INPUT -i lo -j ACCEPT
+
+# Commit the changes
+COMMIT

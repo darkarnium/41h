@@ -2,19 +2,32 @@
 PATH=/usr/games:$PATH
 MOTD_MSG=$(cat <<EOF
 
-  ___   ___   ___  _  _     _______
- / _ \  \  \ /  / | || |   |   ____|
-| | | |  \  V  /  | || |_  |  |__
-| | | |   >   <   |__   _| |   __|
-| |_| |  /  .  \     | |   |  |
- \___/  /__/ \__\    |_|   |__|
+                           ___       _  _   ______ 
+                          / _ \     | || | |  ____|
+                         | | | |_  _| || |_| |__   
+                         | | | \ \/ /__   _|  __|  
+                         | |_| |>  <   | | | |     
+                          \___//_/\_\  |_| |_|     
+                           
 
-        Don't fuck it up.
+         Don't fuck it up. Share shit with wemux, and don't be a dick.
 
-       Tools are in /opt/
-    Scratch is in /scratch/
+                            Tools are in /opt/
+                          Scratch is in /scratch/
+
+                     >>>> INITIAL PASSWORD IS 4f <<<<
+
+ Rather than using vanilla 'tmux', please use the 'wemux' wrapper script. This
+ allows for multiple users to share sessions by simply attaching to the named
+ session for the given user. Check out the documentation at the following URL
+ for more information:
+
+   https://github.com/zolrath/wemux
+
+ Enjoy!
+
 EOF
 )
 
-echo "$MOTD_MSG" | lolcat
+echo -e "$MOTD_MSG" | lolcat -f
 echo

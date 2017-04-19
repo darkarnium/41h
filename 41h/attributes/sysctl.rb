@@ -6,7 +6,7 @@ default['sysctl']['params']['net']['core']['somaxconn'] = 10_240
 
 # Maximum packets allowed to queue when received faster than an interface can
 # process them.
-default['sysctl']['params']['core']['netdev_max_backlog'] = 2048
+default['sysctl']['params']['net']['core']['netdev_max_backlog'] = 2048
 
 # Maximum 'backlogged' SYNs before the kernel starts dropping.
 default['sysctl']['params']['net']['ipv4']['tcp_max_syn_backlog'] = 1024

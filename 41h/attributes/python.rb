@@ -43,15 +43,15 @@ default['python']['apt-packages'] = [
   'python-pyelftools',
   'python3-pyelftools',
   'isort',
-  'python3-isort'
+  'python3-isort',
 ]
 
 # An array of Python packages to install on both versions (pip).
 default['python']['pip-packages'] = [
-  'cerberus'
+  'cerberus',
 ]
 
 # Python 2 packages to install.
 default['python']['pip2-packages'] = [
-  'pwntools'
+  'pwntools',
 ]

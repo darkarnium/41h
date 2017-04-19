@@ -1,9 +1,8 @@
 #
 # Cookbook Name:: 41h
 # Recipe:: python
-#vagrant
 
-# Actually install python+pip. Both versions.
+# Install python and pip.
 include_recipe 'poise-python::default'
 
 # Install python packages from apt.
@@ -13,20 +12,20 @@ node['python']['apt-packages'].each do |p|
   end
 end
 
-# Install python pip packages.
+# Install python 2.X and 3.X pip packages.
 node['python']['pip-packages'].each do |p|
-  # install for python2
   python_package p do
     python '2'
     action :install
   end
-  # install for python3
+
   python_package p do
     python '3'
     action :install
   end
 end
 
+# Install python 2.X pip packages.
 node['python']['pip2-packages'].each do |p|
   python_package p do
     python '2'

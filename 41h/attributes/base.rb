@@ -4,10 +4,12 @@ override['apt']['compile_time_update'] = true
 # Force build-essential to be installed at Chef compile time.
 override['build-essential']['compile_time'] = true
 
-# Define a list of base packages to install (in generic repositories).
+# Define a list of base packages to install (from APT).
 default['base']['packages'] = [
   'git',
   'cmake',
+  'ruby',
+  'htop',
   'curl',
   'wget',
   'tmux',
@@ -21,7 +23,7 @@ default['base']['packages'] = [
   'binutils',
   'subversion',
   'fortune-mod',
-  'nginx',  # to proxy ipython notebook and stuff
+  'nginx', # to proxy ipython notebook and stuff
   'openssl',
   'libssl-dev',
   'valgrind',
@@ -29,5 +31,5 @@ default['base']['packages'] = [
   'thefuck',
   'tcptraceroute',
   'john',
-  'nmap'
+  'nmap',
 ]

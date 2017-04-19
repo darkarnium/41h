@@ -1,21 +1,30 @@
-# Build gobuster
-#execute 'go get' do
-#  cwd '/opt/sources/gobuster'
-#  creates '/opt/sources/gobuster/src'
-#  environment(
-#    'GOPATH' => '/opt/sources/gobuster/'
-#  )
-#end
 #
-#execute 'go build' do
-#  cwd '/opt/sources/gobuster'
-#  creates '/opt/sources/gobuster/gobuster'
-#  environment(
-#    'GOPATH' => '/opt/sources/gobuster/'
-#  )
-#end
+# Cookbook Name:: 41h
+# Recipe:: recon
 #
-#execute 'sudo cp gobuster /usr/bin/gobuster' do
-#  cwd '/opt/sources/gobuster/'
-#  creates '/usr/bin/gobuster'
-#end
+
+# Setup Go environment variables.
+environment = {
+  'GOPATH' => '/opt/sources/go/'
+}
+
+# Install gobuster.
+unless ::File.exist?('/opt/sources/go/src/gobuster/gobuster')
+  execute 'go-get-gobuster' do
+    cwd '/opt/sources/go/src/gobuster'
+    action :run
+    command 'go get'
+    environment environment
+  end
+
+  execute 'go-build-gobuster' do
+    cwd '/opt/sources/go/src/gobuster'
+    action :run
+    command 'go build'
+    environment environment
+  end
+
+  link '/opt/sources/go/src/gobuster/gobuster' do
+    to '/usr/bin/gobuster'
+  end
+end

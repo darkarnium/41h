@@ -1,0 +1,17 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Ensure established, related, icmp and loopback traffic is permitted.
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+
+# Ensure SSH is permitted from management networks.
+<% node['iptables']['management'].each do |m| -%>
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -s <%= m %> -j ACCEPT
+<% end -%>
+
+# Commit the changes.
+COMMIT

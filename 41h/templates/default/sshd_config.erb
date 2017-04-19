@@ -1,0 +1,52 @@
+# The default requires explicit activation of protocol 1
+Protocol 2
+
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Logging
+SyslogFacility AUTHPRIV
+
+# Authentication
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 6
+
+# Public key auth only.
+AuthorizedKeysFile .ssh/authorized_keys
+PubkeyAuthentication yes
+<% if node['ssh']['password_authentication'] == true -%>
+PasswordAuthentication yes
+<% else -%>
+PasswordAuthentication no
+<% end %>
+
+# Change to no to disable s/key passwords
+ChallengeResponseAuthentication no
+
+# GSSAPI options
+GSSAPIAuthentication yes
+GSSAPICleanupCredentials no
+
+# Ensure PAM is used.
+UsePAM yes
+
+# Disable X11 forwarding.
+X11Forwarding no
+
+# Ensure an unprivileged sandbox is used pre-auth.
+UsePrivilegeSeparation sandbox
+
+# no default banner path
+# Banner /etc/sshd/sshd_banner
+
+# Accept locale-related environment variables
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
+
+# Enable SFTP subsystem.
+Subsystem sftp /usr/libexec/openssh/sftp-server
