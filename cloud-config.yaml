@@ -1,6 +1,10 @@
 #cloud-config
 
 runcmd:
+  # Update Apt and fetch required tools.
+  - apt-get -y update
+  - apt-get -y install git bash
+  - apt-get -y install build-essential
   # Fetch and install Chef.
   - curl -L https://omnitruck.chef.io/install.sh | sudo bash
   - /opt/chef/embedded/bin/gem install berkshelf
@@ -11,7 +15,7 @@ runcmd:
   # Check-out the environment cookbook.
   - GIT_SSH_COMMAND="ssh -i /root/.ssh/41h-startup.pem -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git clone git@github.com:darkarnium/41h.git /tmp/provisioning
   # Create the Chef zero repository.
-  - cd /tmp/provisioning
+  - cd /tmp/provisioning/41h
   - berks vendor
   - mkdir /tmp/chef
   - mv ./berks-cookbooks /tmp/chef/cookbooks
