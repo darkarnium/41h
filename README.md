@@ -54,13 +54,13 @@ To deploy a new 41h machine into Digital Ocean (via the API), perform the follow
 To deploy a local virtual machine via Vagrant, perform the following:
 
 1) First up, ensure the following dependencies are installed and configured:
-* Vagrant
-  * https://www.vagrantup.com/
-  * No configuration required.
-* VirtualBox
-  * https://www.virtualbox.org/wiki/Downloads
-  * Ensure Intel VT or AMD-V is configured on the system.
-  * Change the virtual machine default directory (optional).
+  * Vagrant
+    * https://www.vagrantup.com/
+    * No configuration required (if using the VirtualBox driver).
+  * VirtualBox
+    * https://www.virtualbox.org/wiki/Downloads
+    * Ensure Intel VT or AMD-V is configured on the system.
+    * Change the virtual machine default directory (optional).
 2) Run `vagrant up` from this directory.
 3) Wait.
 4) Login using `vagrant ssh`.
