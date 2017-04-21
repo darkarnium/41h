@@ -7,19 +7,20 @@
 node['system']['users'].each do |usr|
   user usr['username'] do
     home "/home/#{usr['username']}"
-    password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
-    group '4f'
     shell '/bin/bash'
+    group '4f'
+    not_if { "getent passwd #{usr['username']}" }
     action :create
     username usr['username']
+    password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
     manage_home true
-    notifies :run, "execute[force-password-#{usr['username']}]", :immediately
   end
 
-  # Expire passwords immediately.
+  # Expire passwords if the password hasn't yet been changed.
   execute "force-password-#{usr['username']}" do
+    action :run
+    not_if { "passwd -S #{usr['username']} | grep -i 01/01/1970" }
     command "chage -d 0 #{usr['username']}"
-    action :nothing
   end
 
   # Create relevant directories.

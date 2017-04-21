@@ -14,4 +14,4 @@ cd /tmp/chef/cookbooks
 # Enable password authentication for ssh and kick off Chef.
 echo '{ "ssh": { "password_authentication": true } }' >> /tmp/chef/chef.json
 chmod 600 /tmp/chef/chef.json
-chef-client -z -o '41h::default' -j /tmp/chef/chef.json
+chef-client -z -o '41h::default,41h::nginx' -j /tmp/chef/chef.json
