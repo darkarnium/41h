@@ -3,7 +3,7 @@ maintainer '0x4F'
 maintainer_email 'wut@example.org'
 description '0x4F CTF Bootstrap'
 long_description '0x4F CTF Bootstrap'
-version '0.2.0'
+version '0.2.1'
 
 depends 'apt', '~> 5.0.0'
 depends 'ntp', '~> 3.2.0'
