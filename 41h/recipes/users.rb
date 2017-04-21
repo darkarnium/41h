@@ -13,13 +13,13 @@ node['system']['users'].each do |usr|
     action :create
     username usr['username']
     manage_home true
-    notifies :run, "execute[force-password-#{usr['username']}]", :immediately
   end
 
-  # Expire passwords immediately.
+  # Expire passwords if the password hasn't yet been changed.
   execute "force-password-#{usr['username']}" do
+    action :run
+    not_if { "passwd -S #{usr['username']} | grep -i 01/01/1970" }
     command "chage -d 0 #{usr['username']}"
-    action :nothing
   end
 
   # Create relevant directories.

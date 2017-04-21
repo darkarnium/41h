@@ -9,7 +9,8 @@ package 'nginx' do
 end
 
 service 'nginx' do
-  action [:enabled, :start]
+  action [:enable, :start]
+  supports [:restart, :stop, :start]
 end
 
 # Install the landing page.
@@ -18,11 +19,10 @@ template '/usr/share/nginx/html/index.html' do
   owner 'root'
   source 'index.html.erb'
   action :create
-  notifies :restart, 'service[nginx]', :delayed
 end
 
 # Install the landing configuration.
-template '/etc/nginx/site-available/landing' do
+template '/etc/nginx/sites-available/landing' do
   mode '0644'
   owner 'root'
   source 'landing.conf.erb'
@@ -33,4 +33,11 @@ end
 # Remove the default site.
 file '/etc/nginx/sites-enabled/default' do
   action :delete
+  notifies :restart, 'service[nginx]', :delayed
+end
+
+# Link in the landing page.
+link '/etc/nginx/sites-enabled/landing' do
+  to '/etc/nginx/sites-available/landing'
+  notifies :restart, 'service[nginx]', :delayed
 end
