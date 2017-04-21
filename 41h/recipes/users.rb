@@ -7,11 +7,12 @@
 node['system']['users'].each do |usr|
   user usr['username'] do
     home "/home/#{usr['username']}"
-    password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
-    group '4f'
     shell '/bin/bash'
+    group '4f'
+    not_if { "getent passwd #{usr['username']}" }
     action :create
     username usr['username']
+    password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
     manage_home true
   end
 
