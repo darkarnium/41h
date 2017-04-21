@@ -41,6 +41,8 @@ If for some reason you want to install 41h on the machine that you have checked 
 
 ### Digital Ocean
 
+*NOTE:* Digital Ocean will charge a MINIMUM of 1 hour if a machine is spawned and then torn down immediately. If using a '48GB' instance (default), this will run you around CAD$0.71 every time the instance is built. If running a lot of tests, please use the Vagrant deployment script, or use a smaller instance to reduce cost!
+
 To deploy a new 41h machine into Digital Ocean (via the API), perform the following:
 
 1) Run `pip install -r requirements.txt` from this directory.
