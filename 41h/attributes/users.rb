@@ -19,5 +19,9 @@ default['system']['users'] = [
   {
     'username' => 'w',
     'ssh_key' => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSrKY1LxlFGdALmPgcRD9PjsIu7v55xWQRznVfriKN5vx+wvDdF3Oyn8tDSik1/8QeDDhaRiIR89cGFMbX9VI/WVrqDMDm/DHbNFbwMMG9/mAR48wt/Y+YU/Rjv39u128CySFOKXPiCTl8WHMDfhdD+4XZ7GxqgxpNGSiYdZCnv9uRrWBMgbqbDBEJkLrMf35HkFt1RPjUDaJl1jz8eBgTolemZ1+U7EKG120Jj8BrYcRAd3SX6h4CJmkAmhGAFWHVl6V++9dGB8knc4jt7qZGmDtW9dUhwvOxPPuVLWsoh51t0yfoxrU9QBM3jwaadtbup51Z6ifZUc9AaEnwZ7Jr Chef_Installed',
+  },
+  {
+    'username' => 'zeiris',
+    'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOT5daZ2d0+lWNgbu2GFi+5tUuNINX7uxGVGdrSsG8E3 Chef_Installed',
   }
 ]
