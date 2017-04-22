@@ -9,7 +9,7 @@ node['system']['users'].each do |usr|
     home "/home/#{usr['username']}"
     shell '/bin/bash'
     group '4f'
-    not_if { "getent passwd #{usr['username']}" }
+    only_if { "getent passwd #{usr['username']}" }
     action :create
     username usr['username']
     password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
