@@ -36,4 +36,8 @@ default['system']['users'] = [
     'username' => 'roguesys',
     'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRdp2c4PFoEOwQLc+vjQArBkXYJNvIPbP446YqVlTLK Chef_Installed',
   },
+  {
+    'username' => 'sum1',
+    'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJrFnoCcsn7YWCO1rPvruODRdbp2nLPFjF1pF9N99cuE Chef_Installed',
+  }
 ]
