@@ -23,5 +23,9 @@ default['system']['users'] = [
   {
     'username' => 'zeiris',
     'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOT5daZ2d0+lWNgbu2GFi+5tUuNINX7uxGVGdrSsG8E3 Chef_Installed',
-  }
+  },
+  {
+    'username' => 'jdoe',
+    'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJqAaKQ7QrVV1qppTvs3Qa7gAi1QwY4Kyro2z2w3gHit Chef_Installed',
+  },
 ]
