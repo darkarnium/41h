@@ -28,4 +28,8 @@ default['system']['users'] = [
     'username' => 'jdoe',
     'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJqAaKQ7QrVV1qppTvs3Qa7gAi1QwY4Kyro2z2w3gHit Chef_Installed',
   },
+  {
+    'username' => 'burrito',
+    'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEheii+6L83nEoyCkZ6a38Rj3VjezBJHYhehaSaSsDU9 Chef_Installed',
+  },
 ]
