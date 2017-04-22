@@ -9,7 +9,7 @@ node['system']['users'].each do |usr|
     home "/home/#{usr['username']}"
     shell '/bin/bash'
     group '4f'
-    only_if { "getent passwd #{usr['username']}" }
+    only_if "getent passwd #{usr['username']}"
     action :create
     username usr['username']
     password '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
@@ -19,7 +19,7 @@ node['system']['users'].each do |usr|
   # Expire passwords if the password hasn't yet been changed.
   execute "force-password-#{usr['username']}" do
     action :run
-    not_if { "passwd -S #{usr['username']} | grep -i 01/01/1970" }
+    not_if "passwd -S #{usr['username']} | grep -i 01/01/1970"
     command "chage -d 0 #{usr['username']}"
   end
 
