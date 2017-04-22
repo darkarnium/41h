@@ -32,4 +32,8 @@ default['system']['users'] = [
     'username' => 'burrito',
     'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEheii+6L83nEoyCkZ6a38Rj3VjezBJHYhehaSaSsDU9 Chef_Installed',
   },
+  {
+    'username' => 'roguesys',
+    'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRdp2c4PFoEOwQLc+vjQArBkXYJNvIPbP446YqVlTLK Chef_Installed',
+  },
 ]
