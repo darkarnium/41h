@@ -19,7 +19,7 @@ node['system']['users'].each do |usr|
   # Expire passwords if the password hasn't yet been changed.
   execute "force-password-#{usr['username']}" do
     action :run
-    not_if "passwd -S #{usr['username']} | grep -i 01/01/1970"
+    only_if "passwd -S #{usr['username']} | grep -i 01/01/1970"
     command "chage -d 0 #{usr['username']}"
   end
 

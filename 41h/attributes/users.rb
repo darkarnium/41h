@@ -39,5 +39,9 @@ default['system']['users'] = [
   {
     'username' => 'sum1',
     'ssh_key' => 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJrFnoCcsn7YWCO1rPvruODRdbp2nLPFjF1pF9N99cuE Chef_Installed',
+  },
+  {
+    'username' => 'mongo',
+    'ssh_key' => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCcq8kJIPajWrbtXm67Ly8fphQvC4QqZzmquFLhDx9X//m28dXD3XLHXMvnWmPdc6VlsLWxmHeni+zzdMw+GZ1edrxb2vGrlpzPN3hbLzjstvLSvBY0noSKkrV3uwDr/mj1CcdM5EwA0TRWmol8hJFkFyjCniXX3hmRTNz/hls0UjLv3n9orTy+/UgUyduK5yPXlBCXCduQKrBrY+u6aBfCwx/lI05AmLWREL8sgSSYI2gd7tAzi6bTRw+IyFf9tZubrIYEGQE/3llBhk2qsXr1KvERE/ke1/MAL5ZGLF21LksGU+tWVqs952Uku/T34Qlsr1V4Pu1kf67dPQ8bpPv1 Chef_Installed',
   }
 ]
