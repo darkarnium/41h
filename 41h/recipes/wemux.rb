@@ -29,6 +29,7 @@ file '/tmp/wemux-wemux' do
   mode '1770'
   owner '4f'
   group '4f'
+  not_if { ::File.exist?('/tmp/wemux-wemux') }
   action :create
 end
 
@@ -36,6 +37,6 @@ end
 execute 'wemux-server' do
   user '4f'
   action :nothing
-  only_if 'pgrep wemux'
+  not_if 'ps aux | grep -i [w]emux'
   command 'wemux background'
 end
