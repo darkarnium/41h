@@ -14,12 +14,12 @@ node['system']['users'].each do |usr|
     username usr['username']
     password node['system']['user']['initial_password']
     manage_home true
+    notifies :run, "execute[force-password-#{usr['username']}]", :immediately
   end
 
-  # Expire passwords if the password hasn't yet been changed.
+  # Expire passwords if the account is new.
   execute "force-password-#{usr['username']}" do
-    action :run
-    only_if "egrep -i $(printf \"^#{usr['username']}.*%q\" \"#{node['system']['user']['initial_password']}\") /etc/shadow"
+    action :nothing
     command "chage -d 0 #{usr['username']}"
   end
 
