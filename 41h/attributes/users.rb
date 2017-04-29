@@ -8,6 +8,10 @@ default['system']['users'] = [
     'ssh_key' => '',
   },
   {
+    'username' => 'svieg',
+    'ssh_key' => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPnaWNfV5NbbW83wiEQTJGE6tMbmlG6LUZFJNpyY2IlypBgbSVzm2jtCnQmanPBuaBxBMM3ygLlO+IkcUmMIWPvGWcfHa+cURzXe65sOX6uvK6cQl8egjmY5JPDWtbE1j6pNIQwioP7y3kWXxcELHMZoCLIrnniT2m3Gi5b3bprxbT6va9cy4GUuSXCil21ug0LR7FiTepynHoXfWVEbFvfZLgtofUYEQwuxu5g4+d9VC5aCuQ3g/rV4gcilbM3Ig6We2RgFckcq0qH+pz4raujnBLgchZhTQeg868eGNyCUxYmB9Y9C3K3B14TKuopJgqcPX+Byx59COSnsh+X75B Chef_Installed',
+  },
+  {
     'username' => 'yrp',
     'ssh_key' => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSixyTdhTkCv7jlxqRRx74Z0Evg/EzBLlP/FhMsggC/zyUZ4IEL3I/sUV3zMMLHe6vOa6L37KOTRUfIVGmvMRiAZhJQQOc9/Mm/ZPWyYOmdEuOTVmUomTTAKbikmmWVIeB2T50t115RqpWy5mzcJvggrtMQTMRxpLTbpbNdANTtsIFJfCpdJfLJuFSh7ViXZBwpI62iI7gNSUcf5NJcV784NXCjCR7DtXFTud5zzr3o+jaj4hkT3jcWJPpkG9WSnUOxbDmfqeezGcwiGHSoX7QH38SjN7WG9p//0iaBQGHFgniMPEewHzicGAap9zXVUxP2cwRBDTtmTO4YBozGzMF Chef_Installed',
   },
