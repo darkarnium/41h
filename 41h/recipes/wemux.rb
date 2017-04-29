@@ -17,11 +17,11 @@ directory '/usr/local/etc/' do
   action :create
 end
 
-file '/usr/local/etc/wemux.conf' do
+template '/usr/local/etc/wemux.conf' do
+  source 'webmux.conf.erb'
   mode '0644'
   owner 'root'
   action :create
-  content 'host_groups=(4f)'
 end
 
 # Ensure the wemux socket is writable.
