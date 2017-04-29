@@ -63,8 +63,8 @@ default['sources']['packages']['gef'] = {
 # Collaboration tools.
 default['sources']['packages']['wemux'] = {
   type: 'git-general',
-  uri: 'https://github.com/zolrath/wemux.git',
-  ref: '01c6541f8deceff372711241db2a13f21c4b210c',
+  uri: 'https://github.com/darkarnium/wemux.git',
+  ref: 'f82000db195b310f75be66dac8a8890366b999c2',
 }
 
 # Recon tools.
