@@ -1,3 +1,6 @@
+# Initial password for each user (force change on login).
+default['system']['user']['initial_password'] = '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
+
 # Users and associated SSH public keys to authorize.
 default['system']['users'] = [
   {

@@ -6,6 +6,7 @@
 # Only attempt to install wemux if it's actually present.
 link '/usr/bin/wemux' do
   to '/opt/sources/wemux/wemux'
+  notifies :run, 'execute[wemux-server]', :delayed
 end
 
 # Create wemux configuration.
@@ -29,4 +30,12 @@ file '/tmp/wemux-wemux' do
   owner '4f'
   group '4f'
   action :create
+end
+
+# Run wemux in server mode.
+execute 'wemux-server' do
+  user '4f'
+  action :nothing
+  only_if 'pgrep wemux'
+  command 'wemux background'
 end
