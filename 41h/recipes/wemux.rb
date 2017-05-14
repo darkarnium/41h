@@ -18,7 +18,7 @@ directory '/usr/local/etc/' do
 end
 
 template '/usr/local/etc/wemux.conf' do
-  source 'webmux.conf.erb'
+  source 'wemux.conf.erb'
   mode '0644'
   owner 'root'
   action :create
