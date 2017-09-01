@@ -18,15 +18,15 @@ include_recipe 'sysctl::apply'
 # Basic system sanity.
 include_recipe 'ntp::default'
 
-# Ensure 4f group exists.
-group '4f' do
+# Ensure group exists.
+group node['system']['group'] do
   action :create
 end
 
 # Create scratch if it doesn't exist.
 directory '/scratch/' do
   owner 'root'
-  group '4f'
+  group node['system']['group']
   mode '0775'
   action :create
 end
@@ -61,8 +61,8 @@ end
 end
 
 # Install MOTD.
-template '/etc/update-motd.d/50-4f' do
-  source '4f-motd.sh.erb'
+template '/etc/update-motd.d/50-41h' do
+  source '41h-motd.sh.erb'
   owner 'root'
   group 'root'
   mode 00755
@@ -85,7 +85,7 @@ template '/etc/tmux.conf' do
 end
 
 # Install sudoers.
-template '/etc/sudoers.d/99-4f' do
+template '/etc/sudoers.d/99-41h' do
   source 'sudoers.erb'
   owner 'root'
   mode '0755'

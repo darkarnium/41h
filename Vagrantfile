@@ -2,9 +2,8 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'ubuntu/xenial64'
   config.vm.box_check_update = true
 
-  # http -> localhost:8000
-  # ssh  -> localhost:2222
-  config.vm.network 'forwarded_port', guest: 80, host: 8000
+  # 80 -> 8080
+  config.vm.network 'forwarded_port', guest: 80, host: 8080
 
   # Mount scratch directory and Chef cookbook(s).
   config.vm.synced_folder './scratch', '/scratch'

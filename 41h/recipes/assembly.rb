@@ -13,7 +13,7 @@ end
 # Build keystone.
 directory '/opt/sources/keystone/build' do
   owner 'root'
-  group '4f'
+  node['system']['group']
   mode '0775'
   action :create
 end

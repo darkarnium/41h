@@ -1,6 +1,6 @@
 # 41h
 
-Provides a Chef environment cookbook for provisioning an 0x4F CTF node.
+Provides a Chef environment cookbook for provisioning an 41h CTF node.
 
 ## Requirements
 
@@ -18,8 +18,8 @@ Due to the assumption of Ubuntu package names, and the use of `apt`, this cookbo
 
 ### Cookbooks
 
-* ntp (~> 3.2.0)
 * apt (~> 5.0.0)
+* ntp (~> 3.2.0)
 * sysctl (~> 0.8.0)
 * poise-python (~> 1.5.1)
 * build-essential (~> 7.0.1)

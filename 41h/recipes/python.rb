@@ -32,3 +32,45 @@ node['python']['pip2-packages'].each do |p|
     action :install
   end
 end
+
+# Install Jypyter, if required.
+# TODO: This is fairly static, including paths, and no venv. Fix?
+if node['python']['jupyter']['install']
+  python_package 'jupyter' do
+    python '3'
+    action :upgrade
+  end
+
+  user 'jupyter' do
+    shell '/bin/false'
+    action :create
+    manage_home true
+  end
+
+  ['/home/jupyter/.jupyter/', '/home/jupyter/notebooks'].each do |d|
+    directory d do
+      owner 'jupyter'
+      mode '0755'
+      action :create
+    end
+  end
+
+  template '/etc/systemd/system/jupyter.service' do
+    source 'jupyter.service.erb'
+    owner 'root'
+    mode '0664'
+    action :create
+  end
+
+  service 'jupyter' do
+    action [:enable]
+  end
+
+  template '/home/jupyter/.jupyter/jupyter_notebook_config.py' do
+    source 'jupyter_notebook_config.py.erb'
+    owner 'jupyter'
+    mode '0600'
+    action :create
+    notifies :restart, 'service[jupyter]', :delayed
+  end
+end

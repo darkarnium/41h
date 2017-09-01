@@ -8,7 +8,7 @@ node['system']['users'].each do |usr|
   user usr['username'] do
     home "/home/#{usr['username']}"
     shell '/bin/bash'
-    group '4f'
+    group node['system']['group']
     not_if "getent passwd #{usr['username']}"
     action :create
     username usr['username']
@@ -26,7 +26,7 @@ node['system']['users'].each do |usr|
   # Create relevant directories.
   directory "/home/#{usr['username']}/.ssh/" do
     owner usr['username']
-    group '4f'
+    node['system']['group']
     mode '0750'
     action :create
   end

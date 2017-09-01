@@ -18,6 +18,10 @@ A set of scripts to configure and deploy a 0x4F CTF bootstrap. Everything needed
 
 ...and more! See the `41h/attributes/sources.rb` and `41h/attributes/base.rb` for a full list.
 
+### Jupyter
+
+Jupyter is included and runs on start, but will only bind to localhost (`127.0.0.1:8888`), and the Notebook password is set to `4f` via Chef `node['python']['jupyter']['password']` attribute. As a result, an SSH tunnel should be used to access Jupyter.
+
 ## Sources
 
 Due to the number of source distributions installed, source packages will not be attempted to be compiled when the machine is launched. This is done to reduce start-up time.

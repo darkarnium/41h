@@ -27,15 +27,15 @@ end
 # Ensure the wemux socket is writable.
 file '/tmp/wemux-wemux' do
   mode '1770'
-  owner '4f'
-  group '4f'
+  owner node['system']['group']
+  node['system']['group']
   not_if { ::File.exist?('/tmp/wemux-wemux') }
   action :create
 end
 
 # Run wemux in server mode.
 execute 'wemux-server' do
-  user '4f'
+  user node['system']['group']
   action :nothing
   not_if 'ps aux | grep -i [w]emux'
   command 'wemux background'

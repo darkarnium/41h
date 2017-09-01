@@ -1,11 +1,12 @@
 # Initial password for each user (force change on login).
-default['system']['user']['initial_password'] = '$6$NwE7mNQ0$M9v988g02UwnSu9fHMqfLdihfkf8/lU6re98aZfJvy4.3VPBJW6rCkqoA5PZRQVvK7F0FHcKjuvFuxLY2JWbh/'
+default['system']['user']['initial_password'] = '$6$yAKWsT68$idXMD6Vv4JRmr6FjiNa6DdqfBm78xVD18TzhBbEPs3KR9m6muM.0VAVPvFIHAQLjzHvjOA/FCLvENFoRgQLtd.'
+default['system']['group'] = 'x41h'
 
 # Users and associated SSH public keys to authorize.
 default['system']['users'] = [
   {
-    'username' => '4f',
-    'ssh_key' => '',
+    'username' => 'x41h',
+    'ssh_key' => ''
   },
   {
     'username' => 'svieg',

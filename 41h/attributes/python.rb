@@ -55,3 +55,7 @@ default['python']['pip-packages'] = [
 default['python']['pip2-packages'] = [
   'pwntools',
 ]
+
+# Install and configure Jupyter.
+default['python']['jupyter']['install'] = true
+default['python']['jupyter']['password'] = 'sha1:efda745d341f:7ec752099c133803ddb949e9e6534180a10c04b4'

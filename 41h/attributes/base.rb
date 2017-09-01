@@ -41,7 +41,7 @@ default['base']['packages'] = [
   'binutils',
   'subversion',
   'fortune-mod',
-  'nginx', # to proxy ipython notebook and stuff
+  'nginx',
   'openssl',
   'libssl-dev',
   'valgrind',
