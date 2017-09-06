@@ -1,2 +1,17 @@
 .vagrant
-ubuntu-*
+Berksfile.lock
+ubuntu-*log
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml
