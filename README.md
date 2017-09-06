@@ -13,10 +13,14 @@ A set of scripts to configure and deploy a 0x4F CTF bootstrap. Everything needed
 * Checksec.
 * Z3.
 * Binwalk.
+* Pwndbg (gdb).
+* Qemu.
+* Hydra.
+* Pwntools.
 * The usual \*nix goodies.
- * `socat`, `vim`, `nc`, `strace`, etc.
+  * `socat`, `vim`, `nc`, `strace`, etc.
 
-...and more! See the `41h/attributes/sources.rb` and `41h/attributes/base.rb` for a full list.
+...and more! See the `41h/attributes/sources.rb`, `41h/attributes/base.rb`, `41h/attributes/ruby.rb`... well, everything in `41h/attributes/` really... for a full list.
 
 ### Jupyter
 
@@ -36,7 +40,7 @@ A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside o
 
 ## Getting Started
 
-### SSH Keys.
+### SSH Keys
 
 To begin, make sure that your SSH public key and username has been added to the `default['system']['users']` array inside of `41h/attributes/users.rb`. If this is not done, you will not be able to login to the machine once provisioning is complete (as the deployed `sshd` configuration disables password authentication by default).
 
@@ -49,7 +53,7 @@ Keys should be added to the existing array in the following format:
   },
 ```
 
-### This Machine.
+### This Machine
 
 If for some reason you want to install 41h on the machine that you have checked the repository out onto, perform the following:
 
