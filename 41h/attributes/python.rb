@@ -2,7 +2,7 @@
 override['poise-python']['install_python2'] = true
 override['poise-python']['install_python3'] = true
 
-# Python-related apt packages to install.
+# Python related apt packages to install.
 default['python']['packages'] = [
   'ipython',
   'ipython-notebook',

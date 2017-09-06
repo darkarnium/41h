@@ -25,7 +25,6 @@ node['sources']['packages'].each do |k, v|
       reference v[:ref]
       action :sync
     end
-  end
   when 'http'
     remote_file "/opt/sources/#{k}" do
       source v[:uri]

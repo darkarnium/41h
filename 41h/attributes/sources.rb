@@ -96,6 +96,6 @@ default['sources']['packages']['gobuster'] = {
 # HTTP direct.
 default['sources']['packages']['cfr'] = {
   type: 'http',
-  uri: 'http://www.benf.org/other/cfr/cfr_0_122.jar'
-  checksum: '65c2dfb76c4904014092663b74c2ea4a8e2f18ca75e98a1e4e064352c618360f'
+  uri: 'http://www.benf.org/other/cfr/cfr_0_122.jar',
+  checksum: '65c2dfb76c4904014092663b74c2ea4a8e2f18ca75e98a1e4e064352c618360f',
 }
