@@ -18,7 +18,7 @@ end
 # The '\t' (tab) is required in place of space due to the way the value is
 # printed.
 describe kernel_parameter('net.ipv4.ip_local_port_range') do
-  its('value') { should eq "2048\t65000" }
+  its('value') { should eq "10240\t65000" }
 end
 
 describe kernel_parameter('net.ipv4.tcp_fin_timeout') do

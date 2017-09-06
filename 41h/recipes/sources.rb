@@ -26,4 +26,10 @@ node['sources']['packages'].each do |k, v|
       action :sync
     end
   end
+  when 'http'
+    remote_file "/opt/sources/#{k}" do
+      source v[:uri]
+      checksum v[:checksum]
+    end
+  end
 end

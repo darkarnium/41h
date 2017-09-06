@@ -14,7 +14,7 @@ service 'nginx' do
 end
 
 # Install the landing page.
-template '/var//www/html/index.html' do
+template '/var/www/html/index.html' do
   mode '0644'
   owner 'root'
   source 'index.html.erb'

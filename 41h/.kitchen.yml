@@ -17,6 +17,7 @@ suites:
   - name: default
     run_list:
       - recipe[41h::default]
+      - recipe[41h::nginx]
     attributes:
       ssh:
         password_authentication: true

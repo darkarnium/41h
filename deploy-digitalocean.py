@@ -46,7 +46,7 @@ def main(api_token, region, size, cloud_config):
     # Launch.
     log.info('Attempting to create %s droplet in %s', size, region)
     droplet = digitalocean.Droplet(
-        name='41h',
+        name='41h-ctf',
         token=api_token,
         image='ubuntu-16-04-x64',
         region=region,

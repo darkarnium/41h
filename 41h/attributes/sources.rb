@@ -92,3 +92,10 @@ default['sources']['packages']['gobuster'] = {
   uri: 'https://github.com/OJ/gobuster.git',
   ref: '7a6d1c068e3e89ee9b3c0c01cb3946957143a0c9',
 }
+
+# HTTP direct.
+default['sources']['packages']['cfr'] = {
+  type: 'http',
+  uri: 'http://www.benf.org/other/cfr/cfr_0_122.jar'
+  checksum: '65c2dfb76c4904014092663b74c2ea4a8e2f18ca75e98a1e4e064352c618360f'
+}

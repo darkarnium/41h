@@ -20,7 +20,7 @@ A set of scripts to configure and deploy a 0x4F CTF bootstrap. Everything needed
 
 ### Jupyter
 
-Jupyter is included and runs on start, but will only bind to localhost (`127.0.0.1:8888`), and the Notebook password is set to `4f` via Chef `node['python']['jupyter']['password']` attribute. As a result, an SSH tunnel should be used to access Jupyter.
+Jupyter is included and runs on start, but will only bind to localhost (`127.0.0.1:8888`), and the Notebook password is set to `41h` via Chef `node['python']['jupyter']['password']` attribute. As a result, an SSH tunnel should be used to access Jupyter.
 
 ## Sources
 
@@ -35,6 +35,19 @@ A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside o
 **Beware!** VirtualBox does not play nicely with symlinks.
 
 ## Getting Started
+
+### SSH Keys.
+
+To begin, make sure that your SSH public key and username has been added to the `default['system']['users']` array inside of `41h/attributes/users.rb`. If this is not done, you will not be able to login to the machine once provisioning is complete (as the deployed `sshd` configuration disables password authentication by default).
+
+Keys should be added to the existing array in the following format:
+
+```
+  {
+    'username' => '<MY_USER>',
+    'ssh_key' => 'ssh-xxxx <MY_SSH_PUBKEY> Chef_Installed',
+  },
+```
 
 ### This Machine.
 

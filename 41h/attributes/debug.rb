@@ -2,4 +2,5 @@
 default['debug']['packages'] = [
   'gdb',
   'lldb',
+  'openjdk-9-jdk-headless', # Sorta.
 ]

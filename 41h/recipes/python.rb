@@ -1,12 +1,13 @@
 #
 # Cookbook Name:: 41h
 # Recipe:: python
+#
 
 # Install python and pip.
 include_recipe 'poise-python::default'
 
 # Install python packages from apt.
-node['python']['apt-packages'].each do |p|
+node['python']['packages'].each do |p|
   package p do
     action :install
   end
