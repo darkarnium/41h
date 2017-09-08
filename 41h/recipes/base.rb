@@ -41,7 +41,7 @@ template '/etc/ssh/sshd_config' do
   owner 'root'
   mode '0600'
   action :create
-  notifies :restart, 'service[sshd]', :delayed
+  notifies :restart, 'service[sshd]', :immediately
 end
 
 # Remove MOTD bullshit we don't want.
