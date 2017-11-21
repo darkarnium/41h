@@ -45,3 +45,22 @@ execute 'build-install-unicorn-python3-bindings' do
   command 'make install3'
   environment node['make']['compiler-environment']
 end
+
+directory '/opt/angr' do
+  owner 'x41h'
+  group node['system']['group']
+  mode '0775'
+  action :create
+end
+
+execute 'make-angr-virtualenv' do
+  command 'virtualenv /opt/angr'
+  user 'x41h'
+  creates '/opt/angr/bin'
+end
+
+execute 'install-angr' do
+  command '/opt/angr/bin/pip install angr'
+  user 'root'
+  creates '/opt/angr/lib/python2.7/site-packages/angr'
+end

@@ -6,6 +6,7 @@ A set of scripts to configure and deploy a 0x4F CTF bootstrap. Everything needed
 
 ## Included
 
+* angr
 * Capstone.
 * Unicorn.
 * Radare2.
