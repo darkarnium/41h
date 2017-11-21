@@ -34,7 +34,7 @@ All sources are cloned into `/opt/sources/` and can be installed appropriately f
 
 ## Scratch
 
-A scratch directory - named `scratch`, who wudda thunk it? - is mounted inside of the VM using Vagrant's 'Synced Folders'. This allows for work on code inside of the parent machine, and provides a quick mechanism for 'bussing' files between the host machine and the VM.
+A scratch directory - named `scratch`, who'da thunk it? - is mounted inside of the VM using Vagrant's 'Synced Folders'. This allows for work on code inside of the parent machine, and provides a quick mechanism for 'bussing' files between the host machine and the VM.
 
 **Beware!** VirtualBox does not play nicely with symlinks.
 
