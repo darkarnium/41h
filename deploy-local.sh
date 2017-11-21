@@ -7,7 +7,7 @@ if [ ! -f /tmp/chefdk_0.19.6-1 ]; then
 fi
     
 # Create the Chef zero repository.
-cd /tmp/provisioning
+cd /tmp/provisioning/41h
 berks vendor
 mkdir -p /tmp/chef
 
