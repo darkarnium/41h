@@ -1,7 +1,2 @@
-# Define a list of asm packages to install (from APT).
-default['asm']['packages'] = [
-  'radare2',
-  'libcapstone3',
-  'libradare2-dev',
-  'libcapstone-dev',
-]
+# Radare2 version to install (Git ref).
+default['asm']['radare2']['version'] = '95f842729cd2f9f7ca85445473451a3afdbaff65'

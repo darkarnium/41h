@@ -6,8 +6,8 @@ default['iptables']['management'] = [
 # Traffic to permit.
 default['iptables']['permit'] = [
   {
-   'port' => '80',
-   'source' => '0.0.0.0/0',
-   'protocol' => 'tcp',
+    'port' => '80',
+    'source' => '0.0.0.0/0',
+    'protocol' => 'tcp',
   }
 ]

@@ -3,43 +3,55 @@
 # Recipe:: python
 #
 
-# Install python and pip.
-include_recipe 'poise-python::default'
+# Perform distribution specific operations.
+case node['platform']
+when 'ubuntu'
+  include_recipe '41h::_python_ubuntu'
+when 'fedora', 'redhat', 'centos'
+  include_recipe '41h::_python_rhel'
+end
 
-# Install python packages from apt.
-node['python']['packages'].each do |p|
-  package p do
-    action :install
-  end
+# This is a hack around an issue with pluggy and setuptools under CentOS.
+#   - Ref: https://github.com/pypa/pip/issues/4104
+execute 'pip-setuptools' do
+  command "pip install -I 'setuptools==30.1.0'"
+  action :run
 end
 
 # Install python 2.X and 3.X pip packages.
 node['python']['pip-packages'].each do |p|
-  python_package p do
-    python '2'
-    action :install
+  execute "pip-#{p}" do
+    command "pip install #{p}"
+    action :run
   end
-
-  python_package p do
-    python '3'
-    action :install
+  execute "pip-#{p}" do
+    command "pip3 install #{p}"
+    action :run
   end
 end
 
 # Install python 2.X pip packages.
 node['python']['pip2-packages'].each do |p|
-  python_package p do
-    python '2'
-    action :install
+  execute "pip-#{p}" do
+    command "pip install #{p}"
+    action :run
+  end
+end
+
+# Install python 3.X pip packages.
+node['python']['pip3-packages'].each do |p|
+  execute "pip-#{p}" do
+    command "pip3 install #{p}"
+    action :run
   end
 end
 
 # Install Jypyter, if required.
 # TODO: This is fairly static, including paths, and no venv. Fix?
 if node['python']['jupyter']['install']
-  python_package 'jupyter' do
-    python '3'
-    action :upgrade
+  execute 'pip-jupyter' do
+    command 'pip3 install jupyter'
+    action :run
   end
 
   user 'jupyter' do

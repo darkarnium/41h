@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: 41h
-# Recipe:: base
+# Recipe:: users
 #
 
 # Install users, create homes and provision ssh keys.
@@ -12,7 +12,7 @@ node['system']['users'].each do |usr|
     not_if "getent passwd #{usr['username']}"
     action :create
     username usr['username']
-    password node['system']['user']['initial_password']
+    password node['system']['initial_password']
     manage_home true
     notifies :run, "execute[force-password-#{usr['username']}]", :immediately
   end

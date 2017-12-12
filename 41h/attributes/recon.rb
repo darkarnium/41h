@@ -1,5 +1,5 @@
-# Define a list of recon packages to install (from APT).
+# Define a list of recon packages to install.
 default['recon']['packages'] = [
-  'hydra',
-  'nmap'
+  'hydra',  # Matching names in RHEL and Debian \o/
+  'nmap',   # Matching names in RHEL and Debian \o/
 ]

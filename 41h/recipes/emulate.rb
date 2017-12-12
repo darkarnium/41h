@@ -3,11 +3,12 @@
 # Recipe:: emulate
 #
 
-# Install emulate packages from apt.
-node['emulate']['packages'].each do |p|
-  package p do
-    action :install
-  end
+# Perform distribution specific operations.
+case node['platform']
+when 'ubuntu'
+  include_recipe '41h::_emulate_ubuntu'
+when 'fedora', 'redhat', 'centos'
+  include_recipe '41h::_emulate_rhel'
 end
 
 # Build and install unicorn.
@@ -46,21 +47,28 @@ execute 'build-install-unicorn-python3-bindings' do
   environment node['make']['compiler-environment']
 end
 
+# Install Angr.
 directory '/opt/angr' do
-  owner 'x41h'
+  owner node['system']['user']
   group node['system']['group']
   mode '0775'
   action :create
 end
 
-execute 'make-angr-virtualenv' do
+execute 'build-make-angr-virtualenv' do
+  user node['system']['user']
   command 'virtualenv /opt/angr'
-  user 'x41h'
   creates '/opt/angr/bin'
+  environment(
+    'HOME': "/home/#{node['system']['user']}/"
+  )
 end
 
-execute 'install-angr' do
+execute 'build-install-angr' do
+  user node['system']['user']
   command '/opt/angr/bin/pip install angr'
-  user 'root'
   creates '/opt/angr/lib/python2.7/site-packages/angr'
+  environment(
+    'HOME': "/home/#{node['system']['user']}/"
+  )
 end

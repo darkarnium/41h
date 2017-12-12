@@ -12,6 +12,11 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
+    driver:
+      box: generic/ubuntu1604
+  - name: centos-7
+    driver:
+      box: centos/7
 
 suites:
   - name: default

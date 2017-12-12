@@ -1,38 +1,7 @@
-# Force an apt-get run at Chef compile time.
-override['apt']['compile_time_update'] = true
+# See distribution specific files.
 
 # Force build-essential to be installed at Chef compile time.
 override['build-essential']['compile_time'] = true
-
-# Define a list of base packages to install (from APT).
-default['base']['packages'] = [
-  'git',
-  'cmake',
-  'ruby',
-  'htop',
-  'curl',
-  'wget',
-  'tmux',
-  'socat',
-  'lolcat',
-  'golang',
-  'netcat',
-  'vim-nox',
-  'libedit-dev',
-  'pkg-config',
-  'binutils',
-  'subversion',
-  'fortune-mod',
-  'nginx',
-  'openssl',
-  'libssl-dev',
-  'valgrind',
-  'z3',
-  'thefuck',
-  'tcptraceroute',
-  'john',
-  'nmap',
-]
 
 # Force environment variables for and builds.
 default['make']['compiler-environment'] = {

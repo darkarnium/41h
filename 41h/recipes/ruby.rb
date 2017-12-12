@@ -3,16 +3,10 @@
 # Recipe:: ruby
 #
 
-# Install ruby packages from apt.
-node['ruby']['packages'].each do |p|
-  package p do
-    action :install
-  end
-end
-
-# Install ruby packages from Rubygems.
-node['ruby']['gems'].each do |g|
-  gem_package g do
-    action :install
-  end
+# Perform distribution specific operations.
+case node['platform']
+when 'ubuntu'
+  include_recipe '41h::_ruby_ubuntu'
+when 'fedora', 'redhat', 'centos'
+  include_recipe '41h::_ruby_rhel'
 end

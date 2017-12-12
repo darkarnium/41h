@@ -1,7 +1,3 @@
-#!/bin/bash
-PATH=/usr/games:$PATH
-MOTD_MSG=$(cat <<EOF
-
                                 _  _  __ _     
                               | || |/_ | |    
                               | || |_| | |__  
@@ -10,7 +6,7 @@ MOTD_MSG=$(cat <<EOF
                                  |_| |_|_| |_|
                                               
                                               
-         Don't fuck it up. Share shit with wemux, and don't be a dick.
+              Don't fuck it up. Share shit, and don't be a dick.
 
                             Tools are in /opt/
                           Scratch is in /scratch/
@@ -20,17 +16,4 @@ MOTD_MSG=$(cat <<EOF
  Jupyter notebook is installed and running at http://127.0.0.1:8888 use SSH
  port forwarding to access this remotely (to mitigate the need for SSL).
 
- Rather than using vanilla 'tmux', please use the 'wemux' wrapper script. This
- allows for multiple users to share sessions by simply attaching to the named
- session for the given user. Check out the documentation at the following URL
- for more information:
-
-   https://github.com/zolrath/wemux
-
  Enjoy!
-
-EOF
-)
-
-echo -e "$MOTD_MSG" | lolcat -f
-echo

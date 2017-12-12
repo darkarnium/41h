@@ -3,31 +3,12 @@
 # Recipe:: nginx
 #
 
-# Ensure nginx is installed and running.
-package 'nginx' do
-  action :install
-end
-
-service 'nginx' do
-  action [:enable, :start]
-  supports [:restart, :stop, :start]
-end
-
-# Install the landing page.
-template '/var/www/html/index.html' do
-  mode '0644'
-  owner 'root'
-  source 'index.html.erb'
-  action :create
-end
-
-# Install the landing configuration.
-template '/etc/nginx/sites-available/landing' do
-  mode '0644'
-  owner 'root'
-  source 'landing.conf.erb'
-  action :create
-  notifies :restart, 'service[nginx]', :delayed
+# Perform distribution specific operations.
+case node['platform']
+when 'ubuntu'
+  include_recipe '41h::_nginx_ubuntu'
+when 'fedora', 'redhat', 'centos'
+  include_recipe '41h::_nginx_rhel'
 end
 
 # Remove the default site.

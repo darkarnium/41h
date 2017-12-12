@@ -5,6 +5,13 @@ default['sources']['packages']['unicorn'] = {
   ref: 'a2edc1852d862dcfbf88866a3a26a9f5b2bdf037',
 }
 
+# Radare2 commit ref / release and source.
+default['sources']['packages']['radare2'] = {
+  type: 'git-general',
+  uri: 'https://github.com/radare/radare2.git',
+  ref: '95f842729cd2f9f7ca85445473451a3afdbaff65',
+}
+
 # Keystone commit ref / release and source.
 default['sources']['packages']['keystone'] = {
   type: 'git-general',
@@ -30,7 +37,7 @@ default['sources']['packages']['villoc'] = {
 default['sources']['packages']['rappel'] = {
   type: 'git-general',
   uri: 'https://github.com/yrp604/rappel.git',
-  ref: 'a969940408afb4717a77f5e2a13792156b1c2301',
+  ref: '43698fe354cd657c057b83b29b50b72e04081596',
 }
 
 # Checksec commit ref / release and source.
@@ -60,13 +67,6 @@ default['sources']['packages']['gef'] = {
   ref: 'a0395fe2e8a136025ebd836daf80e797f76f745b',
 }
 
-# Collaboration tools.
-default['sources']['packages']['wemux'] = {
-  type: 'git-general',
-  uri: 'https://github.com/darkarnium/wemux.git',
-  ref: 'f82000db195b310f75be66dac8a8890366b999c2',
-}
-
 # Recon tools.
 default['sources']['packages']['subbrute'] = {
   type: 'git-general',
@@ -86,6 +86,19 @@ default['sources']['packages']['sqlmap'] = {
   ref: '4ac319b074d78243049f9c31778f07410abe5d05',
 }
 
+# Crypt and Cracking tools.
+default['sources']['packages']['john'] = {
+  type: 'git-general',
+  uri: 'https://github.com/magnumripper/JohnTheRipper.git',
+  ref: '8322a9b3b3ac5a626966a732dc819438ab656d78',
+}
+
+default['sources']['packages']['z3'] = {
+  type: 'git-general',
+  uri: 'https://github.com/Z3Prover/z3.git',
+  ref: '82c26509ae0ac1898c6ceb5b9edddae4c1029eb6',
+}
+
 # Go is special, because of course it is.
 default['sources']['packages']['gobuster'] = {
   type: 'git-go',
@@ -94,7 +107,7 @@ default['sources']['packages']['gobuster'] = {
 }
 
 # HTTP direct.
-default['sources']['packages']['cfr'] = {
+default['sources']['packages']['cfr_0_122.jar'] = {
   type: 'http',
   uri: 'http://www.benf.org/other/cfr/cfr_0_122.jar',
   checksum: '65c2dfb76c4904014092663b74c2ea4a8e2f18ca75e98a1e4e064352c618360f',

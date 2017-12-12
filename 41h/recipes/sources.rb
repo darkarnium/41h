@@ -3,7 +3,7 @@
 # Recipe:: sources
 #
 
-# Create parent directory.
+# Create parent directories - where required.
 directory '/opt/sources/go/src' do
   mode 00755
   recursive true

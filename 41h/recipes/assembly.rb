@@ -3,11 +3,13 @@
 # Recipe:: assembly
 #
 
-# Install asm packages from apt.
-node['asm']['packages'].each do |p|
-  package p do
-    action :install
-  end
+# Build and install Radare2.
+execute 'build-install-radare2' do
+  cwd '/opt/sources/radare2/'
+  user 'root'
+  command '/opt/sources/radare2/sys/install.sh'
+  creates '/opt/sources/radare2/binr/radare2/radare2'
+  environment node['make']['compiler-environment']
 end
 
 # Build keystone.

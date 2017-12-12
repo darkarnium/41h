@@ -1,14 +1,32 @@
 #!/bin/sh -e
 
-# Install ChefDK.
-if [ ! -f /tmp/chefdk_0.19.6-1 ]; then
-    curl -L -s https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.19.6-1_amd64.deb -o /tmp/chefdk_0.19.6-1_amd64.deb
-    dpkg -i /tmp/chefdk_0.19.6-1_amd64.deb
+# Install Chef.
+if [ ! -f /tmp/chef-install.sh ]; then
+  curl -L https://omnitruck.chef.io/install.sh -o /tmp/chef-install.sh
+  bash /tmp/chef-install.sh
 fi
-    
+
+# Clean up chef cache.
+if [ -d /root/.chef/local-mode-cache ]; then
+  rm -rf /root/.chef/local-mode-cache
+fi
+
+# Install Berkshelf dependencies.
+if [ -e /etc/debian_version ]; then
+  apt-get -y update
+  apt-get -y install build-essential ruby-dev
+fi
+if [ -e /etc/redhat-release ]; then
+  yum -y update
+  yum -y groupinstall "Development Tools"
+fi
+
+# Install Berkshelf.
+/opt/chef/embedded/bin/gem install berkshelf
+
 # Create the Chef zero repository.
 cd /tmp/provisioning/41h
-berks vendor
+/opt/chef/embedded/bin/berks vendor
 mkdir -p /tmp/chef
 
 if [ -d /tmp/chef/cookbooks ]; then

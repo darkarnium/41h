@@ -18,8 +18,9 @@ Due to the assumption of Ubuntu package names, and the use of `apt`, this cookbo
 
 ### Cookbooks
 
-* apt (~> 5.0.0)
-* ntp (~> 3.2.0)
-* sysctl (~> 0.8.0)
-* poise-python (~> 1.5.1)
-* build-essential (~> 7.0.1)
+* apt (= 5.0.0)
+* yum (= 5.1.0)
+* yum-epel (= 2.1.2)
+* ntp (= 3.2.0)
+* sysctl (= 0.8.0)
+* build-essential (= 7.0.1)

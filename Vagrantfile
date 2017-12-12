@@ -1,12 +1,13 @@
 Vagrant.configure('2') do |config|
-  config.vm.box = 'ubuntu/xenial64'
+  #  config.vm.box = 'generic/ubuntu1604'
+  config.vm.box = 'centos/7'
   config.vm.box_check_update = true
 
   # 80 -> 8080
   config.vm.network 'forwarded_port', guest: 80, host: 8080
 
   # Mount scratch directory and Chef cookbook(s).
-  config.vm.synced_folder './scratch', '/scratch'
+  # config.vm.synced_folder './scratch', '/scratch'
 
   config.vm.provider 'virtualbox' do |vb|
     vb.gui = false

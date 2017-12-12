@@ -8,6 +8,13 @@ environment = {
   'GOPATH' => '/opt/sources/go/',
 }
 
+# Install recon packages.
+node['recon']['packages'].each do |p|
+  package p do
+    action :install
+  end
+end
+
 # Install gobuster.
 execute 'go-get-gobuster' do
   cwd '/opt/sources/go/src/gobuster'
@@ -27,11 +34,4 @@ end
 
 link '/usr/bin/gobuster' do
   to '/opt/sources/go/bin/gobuster'
-end
-
-# Install recon packages from apt.
-node['recon']['packages'].each do |p|
-  package p do
-    action :install
-  end
 end
