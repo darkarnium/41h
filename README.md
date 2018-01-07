@@ -16,6 +16,7 @@ A set of scripts to configure and deploy a 0x4F CTF bootstrap. Everything needed
 * Binwalk.
 * Pwndbg (gdb).
 * Qemu.
+* Rappel (`¯\_(ツ)_/¯`)
 * Hydra.
 * Pwntools.
 * The usual \*nix goodies.
