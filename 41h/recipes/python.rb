@@ -3,9 +3,6 @@
 # Recipe:: python
 #
 
-# Install python and pip.
-include_recipe 'poise-python::default'
-
 # Install python packages from apt.
 node['python']['packages'].each do |p|
   package p do
@@ -13,33 +10,37 @@ node['python']['packages'].each do |p|
   end
 end
 
+execute "easy_install pip" do
+  action :run
+end
+
+execute "easy_install3 pip" do
+  action :run
+end
+
 # Install python 2.X and 3.X pip packages.
 node['python']['pip-packages'].each do |p|
-  python_package p do
-    python '2'
-    action :install
+  execute "pip install #{p}" do
+    action :run
   end
 
-  python_package p do
-    python '3'
-    action :install
+  execute "pip3 install #{p}" do
+    action :run
   end
 end
 
 # Install python 2.X pip packages.
 node['python']['pip2-packages'].each do |p|
-  python_package p do
-    python '2'
-    action :install
+  execute "pip install #{p}" do
+    action :run
   end
 end
 
 # Install Jypyter, if required.
 # TODO: This is fairly static, including paths, and no venv. Fix?
 if node['python']['jupyter']['install']
-  python_package 'jupyter' do
-    python '3'
-    action :upgrade
+  execute "pip3 install jupyter" do
+    action :run
   end
 
   user 'jupyter' do

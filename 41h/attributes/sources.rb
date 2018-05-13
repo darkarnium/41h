@@ -90,7 +90,7 @@ default['sources']['packages']['sqlmap'] = {
 default['sources']['packages']['gobuster'] = {
   type: 'git-go',
   uri: 'https://github.com/OJ/gobuster.git',
-  ref: '7a6d1c068e3e89ee9b3c0c01cb3946957143a0c9',
+  ref: '34c7157f60013198d862efa43a1024d4617df51d',
 }
 
 # HTTP direct.

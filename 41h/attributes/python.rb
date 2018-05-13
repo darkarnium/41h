@@ -1,9 +1,14 @@
-# Ensure Poise installs Python2 and Python3
-override['poise-python']['install_python2'] = true
-override['poise-python']['install_python3'] = true
-
 # Python related apt packages to install.
 default['python']['packages'] = [
+  'pandoc',
+  'python',
+  'python-dev',
+  'python-setuptools',
+  # 'python-pip',
+  'python3',
+  'python3-dev',
+  'python3-setuptools',
+  # 'python3-pip',
   'ipython',
   'ipython-notebook',
   'ipython3',
@@ -14,8 +19,8 @@ default['python']['packages'] = [
   'python3-scipy',
   'python-parse',
   'python-scapy',
-  'python-openssl',
-  'python3-openssl',
+  # 'python-openssl',
+  # 'python3-openssl',
   'python-crypto',
   'python3-crypto',
   'python-cryptography',
@@ -57,5 +62,5 @@ default['python']['pip2-packages'] = [
 ]
 
 # Install and configure Jupyter.
-default['python']['jupyter']['install'] = true
+default['python']['jupyter']['install'] = false
 default['python']['jupyter']['password'] = 'sha1:efda745d341f:7ec752099c133803ddb949e9e6534180a10c04b4'
