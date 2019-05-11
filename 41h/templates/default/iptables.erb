@@ -1,5 +1,5 @@
 *filter
-:INPUT DROP [0:0]
+:INPUT ACCEPT [0:0]
 :FORWARD DROP [0:0]
 :OUTPUT ACCEPT [0:0]
 
@@ -15,7 +15,7 @@
 
 # Permit services as specified.
 <% node['iptables']['permit'].each do |m| -%>
--A INPUT -p tcp -m state --state NEW -m <%= m['protocol'] %> --dport <%= m['port'] %> -s <%= m['source'] %> -j ACCEPT
+# -A INPUT -p tcp -m state --state NEW -m <%= m['protocol'] %> --dport <%= m['port'] %> -s <%= m['source'] %> -j ACCEPT
 <% end -%>
 
 # Commit the changes.

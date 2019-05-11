@@ -8,8 +8,8 @@ default['system']['users'] = [
     'username' => 'x41h',
     'ssh_key' => ''
   },
-  # {
-  #   'username' => 'MY_USER',
-  #   'ssh_key' => 'ssh-xxxx AAAAAMY_SSH_PUBKEY Chef_Installed',
-  # },
+  {
+    'username' => 'darkarnium',
+    'ssh_key' => 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvgSx3fdxC7KK3zIMNCimrSe8hJgWON0IqTJqRdGQGAhxkwWMVD/I0+IfUSTN7YTTOQL2YyW8N/8RihXcHQjCDHcal5ELfjeqcrdpEh9XT9JyTeZed4VEz9I+w1iHiMN4bIQFUFZyJzqO2e25oknRQqu0sxVApkSNrNTTiGy3/3eDjnHnQg3wsJPk7+yI/LBvRUQhaSxuZME9N2IH+b4vqHL297MMDmAuX4aaEsR8zrOgEh8piSnwbFaqLZZEfXowyROjBIozAeoSNzSmTk21amYPmNj3MueO/rpWDejKcp9CEqmaDQLVv9oZljS7Q/6a8521EKPGJ3WF822yB2wNp Chef_Installed',
+  },
 ]

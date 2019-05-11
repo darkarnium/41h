@@ -10,13 +10,13 @@ node['python']['packages'].each do |p|
   end
 end
 
-execute "easy_install pip" do
-  action :run
-end
+#execute "easy_install pip" do
+#  action :run
+#end
 
-execute "easy_install3 pip" do
-  action :run
-end
+#execute "easy_install3 pip" do
+#  action :run
+#end
 
 # Install python 2.X and 3.X pip packages.
 node['python']['pip-packages'].each do |p|

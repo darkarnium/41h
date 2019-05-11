@@ -1,0 +1,39 @@
+{
+  "name": "41h",
+  "description": "0x4F CTF Bootstrap",
+  "long_description": "0x4F CTF Bootstrap",
+  "maintainer": "0x4F",
+  "maintainer_email": "wut@example.org",
+  "license": "All rights reserved",
+  "platforms": {
+
+  },
+  "dependencies": {
+    "apt": "~> 5.0.0",
+    "ntp": "~> 3.2.0",
+    "sysctl": "~> 0.8.0",
+    "build-essential": "~> 7.0.1"
+  },
+  "providing": {
+
+  },
+  "attributes": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.3.0",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}

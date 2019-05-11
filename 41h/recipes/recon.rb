@@ -9,22 +9,22 @@ environment = {
 }
 
 # Install gobuster.
-execute 'go-get-gobuster' do
-  cwd '/opt/sources/go/src/gobuster'
-  action :run
-  not_if { ::File.exist?('/opt/sources/go/bin/gobuster') }
-  command 'go get'
-  environment environment
-end
-
-execute 'go-build-gobuster' do
-  cwd '/opt/sources/go/src/gobuster'
-  action :run
-  not_if { ::File.exist?('/opt/sources/go/bin/gobuster') }
-  command 'go build'
-  environment environment
-end
-
+#execute 'go-get-gobuster' do
+#  cwd '/opt/sources/go/src/gobuster'
+#  action :run
+#  not_if { ::File.exist?('/opt/sources/go/bin/gobuster') }
+#  command 'go get'
+#  environment environment
+#end
+#
+#execute 'go-build-gobuster' do
+#  cwd '/opt/sources/go/src/gobuster'
+#  action :run
+#  not_if { ::File.exist?('/opt/sources/go/bin/gobuster') }
+#  command 'go build'
+#  environment environment
+#end
+#
 link '/usr/bin/gobuster' do
   to '/opt/sources/go/bin/gobuster'
 end

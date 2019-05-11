@@ -55,7 +55,6 @@ end
 
 execute 'make-angr-virtualenv' do
   command 'virtualenv /opt/angr'
-  user 'x41h'
   creates '/opt/angr/bin'
 end
 
